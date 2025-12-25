@@ -12,6 +12,9 @@ services:
         target: /usr/share/nginx/html
     networks:
       - dinnw
+      - foonw
+      - gennw
+      - insnw
 
   food:
     container_name: food
@@ -23,7 +26,10 @@ services:
         source: foovol
         target: /usr/local/apache2/htdocs/
     networks:
+      - dinnw
       - foonw
+      - gennw
+      - insnw
 
   genie:
     container_name: genie
@@ -35,7 +41,10 @@ services:
         source: genvol
         target: /usr/share/nginx/html
     networks:
+      - dinnw
+      - foonw
       - gennw
+      - insnw
 
   instamart:
     container_name: instamart
@@ -47,6 +56,9 @@ services:
         source: insvol
         target: /usr/local/apache2/htdocs/
     networks:
+      - dinnw
+      - foonw
+      - gennw
       - insnw
 
 volumes:
