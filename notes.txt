@@ -100,13 +100,19 @@ docker images
 ____________________________________________________
 Naveen meeting
 
-Join Zoom Meeting
-https://bnsf.zoom.us/j/81765477331?pwd=NHb3TI3u1nJsW6VTrEQtUQAbuaK8nd.1&from=addon
+Meeting ID
+707 543 4121
+Passcode
+773153
+Invite link
+https://bnsf.zoom.us/j/7075434121?pwd=NVlEMnJzS1NHMzVNaHlVbndYR3pKdz09
+Host
+Srinu V
+Participant ID
+431613
+______________________________
 
-Meeting ID: 817 6547 7331
-Passcode: 904934_________________________________
-
-to clear the windows powershell history 
+to clear the windows powershell history
 [Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory()
 __________________________________
 
@@ -128,13 +134,14 @@ https://github.com/Srinuas/bank.git
 https://github.com/Srinuas/flightapp.git
 https://github.com/Srinuas/metroapp.git
 https://github.com/Srinuas/e-com.git
+https://github.com/Srinuas/notes.git
 https://github.com/Srinuas/all-setups.git
 
 git config --global user.email "srinu.as@og.com"
 git config --global user.name "srinuas"
 
 http key:(60 days from 21st November 2025)
-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
+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
 
 Private repos kavali ante Personal Access Token add cheyyali:
 
@@ -158,6 +165,10 @@ srinuas/metro:nginx
 srinuas/ecom2:httpd
 srinuas/devopsapp:mysqldb
 srinuas/devopsapp:jsapp
+srinuas/swiggy:food (httpd)
+srinuas/swiggy:dineout (nginx)
+srinuas/swiggy:genie (nginx)
+srinuas/swiggy:instamart (httpd)
 docker pull srinuas/bank:js
 __________________________________
 
@@ -393,67 +404,67 @@ pipeline {
 
 ____________________________________________________
 
-pipeline { 
+pipeline {
 
-    agent { 
+    agent {
 
-        node { 
+        node {
 
-            label 'test' 
+            label 'test'
 
-        } 
+        }
 
-    } 
+    }
 
-    tools { 
+    tools {
 
-        maven 'mvnsri' 
+        maven 'mvnsri'
 
-    } 
+    }
 
-    stages { 
+    stages {
 
-        stage ('code') { 
+        stage ('code') {
 
-            steps { 
+            steps {
 
-                git branch: 'main1', credentialsId: 'jenkin_server', url: 'https://github.com/Srinuas/Nexus.git' 
+                git branch: 'main1', credentialsId: 'jenkin_server', url: 'https://github.com/Srinuas/Nexus.git'
 
-            } 
+            }
 
-        } 
+        }
 
-        stage ('build') { 
+        stage ('build') {
 
-            steps { 
+            steps {
 
-                sh 'mvn clean package' 
+                sh 'mvn clean package'
 
-            } 
+            }
 
-        } 
+        }
 
-        stage ('artifact') { 
+        stage ('artifact') {
 
-            steps { 
+            steps {
 
-                nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-8.7.1.war', type: 'war']], credentialsId: 'nexuserver', groupId: 'in.javahome', nexusUrl: '18.206.153.227:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'myrepo', version: '8.7.1' 
+                nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-8.7.1.war', type: 'war']], credentialsId: 'nexuserver', groupId: 'in.javahome', nexusUrl: '18.206.153.227:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'myrepo', version: '8.7.1'
 
-            } 
+            }
 
-        } 
+        }
 
-        stage ('deploy') { 
+        stage ('deploy') {
 
-            steps { 
+            steps {
 
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'Devser', path: '', url: 'http://100.24.118.160:8080/')], contextPath: 'myapppipe', war: 'target/*.war' 
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'Devser', path: '', url: 'http://100.24.118.160:8080/')], contextPath: 'myapppipe', war: 'target/*.war'
 
-            } 
+            }
 
-        } 
+        }
 
-    } 
+    }
 
 }
 ________________________________________________
@@ -480,4 +491,4 @@ ________________________________________________
 106.221.184.90 - - [10/Dec/2025:09:31:15 +0000] "GET / HTTP/1.1" 200 51671 "android-app://com.google.android.googlequicksearchbox/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36" "-"
 2025/12/10 09:31:16 [error] 29#29: *4 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 106.221.184.90, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "98.91.192.95:8080", referrer: "http://98.91.192.95:8080/"
  - - [10/Dec/2025:09:31:16 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://98.91.192.95:8080/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36" "-"
-[root@docker metro]#
+
