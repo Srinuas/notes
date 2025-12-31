@@ -194,4 +194,9 @@ mysql        latest    43463387c19a   7 days ago     932MB
    35  docker pull mysql
    36  df -h
    37  docker images
-
+   48  docker run -itd --name cont1 -p 1212:80 --cpus='0.25' --memory=250m srinuas/swiggy:dineout
+   49  docker inspect con1
+   50  docker inspect cont1
+   51  docker inspect cont1 | grep -i cpu
+   52  docker inspect cont1 | grep -i memory
+   53  docker stats cont1
