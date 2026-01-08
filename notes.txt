@@ -140,8 +140,8 @@ https://github.com/Srinuas/all-setups.git
 git config --global user.email "srinu.as@og.com"
 git config --global user.name "srinuas"
 
-git http key:(no expire)
-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
+git http key:(mar 9th 2026)
+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
 
 Private repos kavali ante Personal Access Token add cheyyali:
 
@@ -491,5 +491,6 @@ ________________________________________________
 106.221.184.90 - - [10/Dec/2025:09:31:15 +0000] "GET / HTTP/1.1" 200 51671 "android-app://com.google.android.googlequicksearchbox/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36" "-"
 2025/12/10 09:31:16 [error] 29#29: *4 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 106.221.184.90, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "98.91.192.95:8080", referrer: "http://98.91.192.95:8080/"
  - - [10/Dec/2025:09:31:16 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://98.91.192.95:8080/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36" "-"
+
 
 
