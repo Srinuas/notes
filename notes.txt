@@ -492,5 +492,19 @@ ________________________________________________
 2025/12/10 09:31:16 [error] 29#29: *4 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 106.221.184.90, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "98.91.192.95:8080", referrer: "http://98.91.192.95:8080/"
  - - [10/Dec/2025:09:31:16 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://98.91.192.95:8080/" "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36" "-"
 
+_____________________________________________
 
+pod manifesst file sample:
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod3
+spec:
+  containers:
+    - name: con1
+      image: srinuas/swiggy:food
+      ports:
+        - containerPort: 80
 
